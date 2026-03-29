@@ -1,86 +1,22 @@
 {
-  "name": "product-design",
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-product-design-marketplace",
   "version": "1.0.0",
   "description": "Structured product thinking layer — explore problems, define users, scope solutions, and hand off to architecture agents.",
-  "author": {
+  "owner": {
     "name": "Claude Product",
     "email": "product@example.com"
   },
-  "license": "MIT",
-  "keywords": ["product", "product-thinking", "jtbd", "discovery", "handoff", "architecture"],
-  "components": {
-    "agents": [
-      {
-        "source": "agents/product-team.md",
-        "destination": "agents/product-team.md"
-      }
-    ],
-    "skills": [
-      {
-        "source": "skills/product-thinking/SKILL.md",
-        "destination": "skills/product-thinking/SKILL.md"
-      }
-    ],
-    "commands": [
-      {
-        "source": "commands/handoff-architecture.md",
-        "destination": "commands/handoff-architecture.md"
-      },
-      {
-        "source": "commands/formalize.md",
-        "destination": "commands/formalize.md"
-      },
-      {
-        "source": "commands/explore-alternatives.md",
-        "destination": "commands/explore-alternatives.md"
-      }
-    ],
-    "hooks": {
-      "source": "hooks/hooks.json"
-    },
-    "shared": [
-      {
-        "source": "shared/output-conventions.md",
-        "destination": "shared/output-conventions.md"
-      },
-      {
-        "source": "shared/product-knowledge.md",
-        "destination": "shared/product-knowledge.md"
-      },
-      {
-        "source": "shared/handoff-template.md",
-        "destination": "shared/handoff-template.md"
-      }
-    ],
-    "templates": [
-      {
-        "source": "templates/product-context.md",
-        "destination": "templates/product-context.md"
-      },
-      {
-        "source": "templates/problem.md",
-        "destination": "templates/problem.md"
-      },
-      {
-        "source": "templates/users.md",
-        "destination": "templates/users.md"
-      },
-      {
-        "source": "templates/solutions.md",
-        "destination": "templates/solutions.md"
-      },
-      {
-        "source": "templates/features.md",
-        "destination": "templates/features.md"
-      },
-      {
-        "source": "templates/metrics.md",
-        "destination": "templates/metrics.md"
-      },
-      {
-        "source": "templates/decisions.md",
-        "destination": "templates/decisions.md"
-      }
-    ]
-  }
+  "plugins": [
+    {
+      "name": "product-design",
+      "description": "Structured product thinking layer — explore problems, define users, scope solutions, and hand off to architecture agents.",
+      "version": "1.1.0",
+      "author": { "name": "Claude Product" },
+      "source": ".",
+      "category": "product",
+      "tags": ["product", "product-thinking", "jtbd", "discovery", "handoff", "architecture"],
+      "strict": false
+    }
+  ]
 }

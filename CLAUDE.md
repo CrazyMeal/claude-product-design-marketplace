@@ -11,27 +11,30 @@ claude-product-design-marketplace/
 ├── CLAUDE.md                          ← you are here
 ├── README.md
 ├── .claude-plugin/
-│   ├── plugin.json                    ← plugin manifest
 │   └── marketplace.json               ← marketplace component registry
-├── agents/
-│   └── product-team.md                ← 5 product personas (single file)
-├── skills/
-│   └── product-thinking/
-│       └── SKILL.md                   ← auto-trigger skill
-├── commands/
-│   ├── handoff-architecture.md        ← /handoff-architecture
-│   ├── formalize.md                   ← /formalize
-│   └── explore-alternatives.md        ← /explore-alternatives
-├── hooks/
-│   └── hooks.json                     ← Stop + PostToolUse hooks
-├── shared/
-│   ├── output-conventions.md          ← authoritative file locations and naming rules
-│   ├── product-knowledge.md           ← JTBD, RICE, experiment frameworks
-│   └── handoff-template.md            ← architecture handoff output format
-├── templates/
-│   └── *.md                           ← blueprints for product/ files in consumer projects
-└── references/
-    └── interaction-rules.md           ← detailed agent interaction protocol
+└── plugins/
+    └── product-design/
+        ├── .claude-plugin/
+        │   └── plugin.json            ← plugin manifest
+        ├── agents/
+        │   └── product-team.md        ← 5 product personas (single file)
+        ├── skills/
+        │   └── product-thinking/
+        │       └── SKILL.md           ← auto-trigger skill
+        ├── commands/
+        │   ├── handoff-architecture.md ← /handoff-architecture
+        │   ├── formalize.md           ← /formalize
+        │   └── explore-alternatives.md ← /explore-alternatives
+        ├── hooks/
+        │   └── hooks.json             ← Stop + PostToolUse hooks
+        ├── shared/
+        │   ├── output-conventions.md  ← authoritative file locations and naming rules
+        │   ├── product-knowledge.md   ← JTBD, RICE, experiment frameworks
+        │   └── handoff-template.md    ← architecture handoff output format
+        ├── templates/
+        │   └── *.md                   ← blueprints for product/ files in consumer projects
+        └── references/
+            └── interaction-rules.md   ← detailed agent interaction protocol
 ```
 
 ## Plugin Conventions

@@ -1,0 +1,11 @@
+{
+  "name": "product-design",
+  "version": "1.0.0",
+  "description": "Structured product thinking layer — explore problems, define users, scope solutions, and hand off to architecture agents.",
+  "author": {
+    "name": "Claude Product",
+    "email": "product@example.com"
+  },
+  "license": "MIT",
+  "keywords": ["product", "product-thinking", "jtbd", "discovery", "handoff", "architecture"]
+}

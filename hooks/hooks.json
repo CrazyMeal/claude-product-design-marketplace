@@ -1,0 +1,29 @@
+{
+  "description": "Product workflow nudges: suggest formalization after product discussions, and suggest updating product-context after product files are written.",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Before stopping, check whether this conversation involved product thinking — exploring a problem, discussing users, evaluating solutions, scoping features, or making product decisions. If it did, and no /formalize or /handoff-architecture command has been run in this session, suggest one of these in a single short line: '-> Run /formalize to capture this into product files.' or '-> Run /handoff-architecture when you are ready to hand off to architecture agents.' Choose whichever is more appropriate to the conversation state. If no product thinking occurred, produce no output.",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "A file was just written. Check the file path. If it matches the pattern product/*.md (e.g., product/problem.md, product/features.md) and the file written is NOT product/product-context.md, suggest in a single short line: '-> Update product/product-context.md to reflect this change.' If the file path does not match product/*.md, produce no output.",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

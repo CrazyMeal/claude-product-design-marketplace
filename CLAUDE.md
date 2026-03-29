@@ -11,7 +11,8 @@ claude-product-design-marketplace/
 ├── CLAUDE.md                          ← you are here
 ├── README.md
 ├── .claude-plugin/
-│   └── plugin.json                    ← plugin manifest
+│   ├── plugin.json                    ← plugin manifest
+│   └── marketplace.json               ← marketplace component registry
 ├── agents/
 │   └── product-team.md                ← 5 product personas (single file)
 ├── skills/

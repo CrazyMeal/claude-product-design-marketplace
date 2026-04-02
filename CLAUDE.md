@@ -25,8 +25,6 @@ claude-product-design-marketplace/
         │   ├── handoff-architecture.md ← /handoff-architecture
         │   ├── formalize.md           ← /formalize
         │   └── explore-alternatives.md ← /explore-alternatives
-        ├── hooks/
-        │   └── hooks.json             ← Stop + PostToolUse hooks
         ├── shared/
         │   ├── output-conventions.md  ← authoritative file locations and naming rules
         │   ├── product-knowledge.md   ← JTBD, RICE, experiment frameworks
@@ -75,10 +73,6 @@ model: opus
 
 Files in `shared/` are loaded **on-demand** by agents, skills, and commands — never auto-injected. Reference them explicitly in the body of the relevant files.
 
-### Hooks
-
-All hooks use `"type": "prompt"`. They suggest, never force. Every hook prompt must include a guard condition: "If [condition not met], produce no output."
-
 ### Templates
 
 Files in `templates/` are blueprints. They are copied into the consumer project's `product/` directory when a user initializes product work. They are not modified by the plugin itself.
@@ -86,11 +80,10 @@ Files in `templates/` are blueprints. They are copied into the consumer project'
 ## Versioning
 
 - Version follows semver in `.claude-plugin/plugin.json`
-- Bump version when adding or changing agents, skills, commands, or hooks
+- Bump version when adding or changing agents, skills, or commands
 
 ## Contributing
 
 - Keep agent/skill/command files focused — one responsibility each
 - No passive validation in agents — every contribution must add a distinct perspective
 - Keep shared knowledge files reference-style (scannable, not narrative)
-- Test hooks by verifying they fire only when their guard condition is met

@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "claude-product-design-marketplace",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Structured product thinking layer — explore problems, define users, scope solutions, and hand off to architecture agents.",
   "owner": {
     "name": "Claude Product",
@@ -11,7 +11,7 @@
     {
       "name": "product-design",
       "description": "Structured product thinking layer — explore problems, define users, scope solutions, and hand off to architecture agents.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "author": { "name": "Claude Product" },
       "source": "./plugins/product-design",
       "category": "product",

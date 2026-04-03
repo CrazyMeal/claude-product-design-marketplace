@@ -30,9 +30,19 @@ your-project/
 - Decision log entries: ordered chronologically, newest last
 - Feature list: ordered by priority (highest first)
 
+## Prohibited Patterns
+
+These are hard rules. Violating them produces output that is useless or harmful to downstream architecture agents.
+
+- **No monolithic documents.** Never create PRD.md, USER-FLOWS.md, spec.md, requirements.md, or any document that combines multiple product concerns.
+- **No files over 30 lines of content.** Long files are a signal that a concern was not separated properly.
+- **Never write outside `product/`.** Not `docs/product/`, not `docs/`, not the project root. Only `product/`.
+- **Only the 7 canonical files.** Do not invent new file names. If something doesn't fit, reconsider the content, not the filename.
+- **Use templates as structure basis.** When creating a file for the first time, load the corresponding template from `templates/` to get the section headers.
+
 ## Handoff Artifacts
 
-Architecture handoff output is written to:
+Architecture handoff output is the one exception to the `product/` rule. It is written to:
 
 ```
 your-project/
@@ -40,4 +50,4 @@ your-project/
     └── product-handoff.md
 ```
 
-This file is the input consumed by architecture plugins.
+This file is the input consumed by architecture plugins. It is generated only by `/handoff-architecture`, never by the skill or agent directly.

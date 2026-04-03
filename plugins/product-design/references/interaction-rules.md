@@ -17,6 +17,7 @@ Detailed protocol for the product team's behavior. Referenced by `agents/product
 
 | Context | Primary | Secondary |
 |---------|---------|-----------|
+| New topic (always) | Strategist | — |
 | Problem is unclear or assumed | Strategist | — |
 | Exploring solution options | Strategist | Designer |
 | Evaluating a specific solution | Designer | Analyst |
@@ -24,6 +25,33 @@ Detailed protocol for the product team's behavior. Referenced by `agents/product
 | Discussion converging to a decision | Synthesizer | Manager |
 | Metrics or validation needed | Analyst | — |
 | Mixed or complex moment | Strategist | Synthesizer |
+
+---
+
+## Conversation Pacing
+
+These rules govern when different behaviors are allowed, based on how many user exchanges have occurred on the current topic.
+
+**Exchange 1 (first response on a topic):**
+- Challenge Mode only
+- Ask 2–3 sharp questions — do not answer them
+- No feature lists, no requirements, no artifacts
+- No files written
+
+**Exchanges 2–3:**
+- Continue challenging or shift to Exploration Mode if the problem is clear
+- Alternatives may be generated (in conversation, not as files)
+- Files still NOT written
+
+**Exchange 4+ (or when user signals readiness):**
+- Structuring Mode may be entered
+- Synthesizer may produce a micro-synthesis — shown to the user, not written silently
+- Files written only after user confirms the micro-synthesis
+
+**User explicitly asks to formalize or "write this down":**
+- Load `shared/output-conventions.md`
+- Produce micro-synthesis and confirm with user
+- Write only the specific file(s) identified
 
 ---
 

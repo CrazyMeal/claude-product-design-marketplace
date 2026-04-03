@@ -57,9 +57,34 @@ Determine the output path:
 
 Create the directory if it doesn't exist. Write the handoff document.
 
-Confirm to the user: "Handoff written to [path]. Architecture agents can now use this as input."
-
 ## Step 6 — Update product-context.md
 
 Add an entry to `product/product-context.md` under Key Decisions:
 > Architecture handoff generated — [date] → [output path]
+
+## Step 7 — Guide the User to Architecture Plugins
+
+**This is critical.** The handoff document is an INPUT for architecture plugins, not an end product. After writing the handoff, tell the user what to do next.
+
+Present this guidance:
+
+```
+Handoff written to [path].
+
+This document is the input for architecture agents. Do NOT produce architecture artifacts manually.
+Instead, use the architecture plugin commands:
+
+→ /architecture-design:design-system [name]   — Design the system architecture (C4 diagrams, component design)
+→ /architecture-docs:tech-spec [feature-name] — Generate a modular technical specification
+→ /diagrams-as-code:c4-diagram [system-name]  — Generate C4 diagrams as separate .puml files
+→ /architecture-docs:adr [decision-title]     — Create an Architecture Decision Record
+
+The architecture plugins will read your handoff and produce properly structured artifacts:
+  - Diagrams → docs/diagrams/*.puml (separate files, not embedded in markdown)
+  - Tech specs → docs/specs/[feature]/ (modular directory with focused files)
+  - ADRs → docs/adr/NNNN-[title].md
+
+Start with /architecture-design:design-system to get the overall architecture, then /tech-spec for implementation details.
+```
+
+**NEVER produce architecture artifacts yourself.** No C4 diagrams, no tech specs, no component designs. That is the architecture plugins' job.

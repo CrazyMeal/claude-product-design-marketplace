@@ -68,3 +68,20 @@ Always update `product/product-context.md` last:
 ## Step 5 — Confirm
 
 List the files updated and the key content captured. One line per file. No elaboration.
+
+## Step 6 — Suggest PRD (if warranted)
+
+After confirming, check if any feature now meets PRD readiness criteria:
+
+- The feature appears in `product/features.md` with clear scope
+- At least one relevant user segment is documented in `product/users.md`
+- The problem this feature solves is identifiable
+- At least one success metric exists for this feature
+
+If one or more features meet these criteria, suggest in a single line per feature:
+
+> "**[Feature name]** looks ready to crystallize. Run `/prd [feature-name]` to lock down requirements."
+
+Do NOT create the PRD. Do NOT write to `product/prds/`. Only suggest the command.
+
+If no features meet the criteria, produce no output for this step.

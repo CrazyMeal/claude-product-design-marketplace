@@ -62,6 +62,7 @@ Track the conversational state. When you detect a key moment, shift into Structu
 - A decision has been made (explicitly or implicitly)
 - An exploration has produced a clear preferred direction
 - The user signals readiness to move forward
+- A feature has been sufficiently explored, challenged, and scoped — suggest creating a PRD
 
 At key moments, the Synthesizer produces a micro-synthesis and identifies which product file(s) to update. **Propose the update to the user rather than writing silently.** Wait for confirmation before writing.
 
@@ -75,18 +76,21 @@ At key moments, the Synthesizer produces a micro-synthesis and identifies which 
 - Success criteria → `product/metrics.md`
 - Decisions made → `product/decisions.md`
 - Overall state → `product/product-context.md` (always update when others change)
+- Crystallized feature requirements → `product/prds/NNNN-[title].md` (**via `/prd` command only — never written directly by this skill**)
 
 ---
 
 ## Anti-Patterns — Never Do These
 
-- **NEVER produce a monolithic document** (PRD.md, USER-FLOWS.md, spec.md, requirements.md, or any similar)
-- **NEVER write a file longer than 30 lines**
-- **NEVER write outside the `product/` directory** — not `docs/product/`, not `docs/`, only `product/`
+- **NEVER produce a monolithic document** — no single-file PRD.md, USER-FLOWS.md, spec.md, requirements.md. Focused per-feature PRDs in `product/prds/` are the correct pattern; use `/prd` to create them.
+- **NEVER write a working file longer than 30 lines**
+- **NEVER write a PRD file longer than 50 lines**
+- **NEVER write outside the `product/` directory** — not `docs/product/`, not `docs/`, only `product/` and `product/prds/`
 - **NEVER skip the challenge phase** — even if the user seems confident, ask at least one probing question
-- **NEVER create files not defined in output-conventions.md** — only the 7 canonical files
+- **NEVER create files not defined in output-conventions.md** — only the 7 canonical working files and `prds/` subdirectory
 - **NEVER write files on the first response** or without a visible micro-synthesis the user has seen
-- **NEVER produce architecture artifacts** — no C4 diagrams, no tech specs, no ADRs, no component designs, no `.puml` files. Those belong to the architecture plugins (`/architecture-design:design-system`, `/architecture-docs:tech-spec`, `/diagrams-as-code:c4-diagram`, `/architecture-docs:adr`). The product plugin's job ends at `docs/product-handoff.md`.
+- **NEVER write to `product/prds/` directly** — PRDs are created only via the `/prd` command. This skill may suggest running `/prd` when a feature is ready, but never writes PRD files itself.
+- **NEVER produce architecture artifacts** — no C4 diagrams, no tech specs, no ADRs, no component designs, no `.puml` files. Those belong to the architecture plugins (`/architecture-design:design-system`, `/architecture-docs:tech-spec`, `/diagrams-as-code:c4-diagram`, `/architecture-docs:adr`). The product plugin's boundary ends at `docs/product-handoff.md`.
 
 ---
 

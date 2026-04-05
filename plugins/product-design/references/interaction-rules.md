@@ -24,6 +24,7 @@ Detailed protocol for the product team's behavior. Referenced by `agents/product
 | Scoping or prioritizing features | Manager | Analyst |
 | Discussion converging to a decision | Synthesizer | Manager |
 | Metrics or validation needed | Analyst | — |
+| Feature ready for crystallization | Synthesizer | Manager |
 | Mixed or complex moment | Strategist | Synthesizer |
 
 ---
@@ -52,6 +53,30 @@ These rules govern when different behaviors are allowed, based on how many user 
 - Load `shared/output-conventions.md`
 - Produce micro-synthesis and confirm with user
 - Write only the specific file(s) identified
+
+---
+
+## PRD Suggestion Protocol
+
+A PRD suggestion is one level above synthesis — it requires more signal than a micro-synthesis before being appropriate.
+
+**Suggest `/prd [feature-name]` only when:**
+1. The working files already have content for this feature (problem, users, features are populated)
+2. The feature scope is clear — must-haves are distinguishable from nice-to-haves
+3. At least one success metric has been discussed for this feature
+4. The suggestion follows naturally from a Structuring moment, not a Challenge or Exploration moment
+
+**How to suggest:**
+- One line, from the Manager or Synthesizer
+- Example: "This feature looks ready to crystallize. Run `/prd balance-tracking` to lock down requirements."
+- Never more than one suggestion per response
+- Never suggest a PRD and a file write in the same response — they are different levels of formalization
+
+**Do NOT suggest a PRD when:**
+- Still in Challenge or Exploration Mode for this feature
+- The feature scope is still open (no clear in/out boundary)
+- The user is generating options, not converging
+- The Synthesizer just produced a micro-synthesis for the first time on this feature — wait one more exchange
 
 ---
 

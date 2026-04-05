@@ -65,6 +65,17 @@ No marketing language. Engineering-relevant framing only.]
 
 - [Deferred feature]: [reason for deferral]
 
+## Product Requirements
+
+[Summarize each Accepted or Proposed PRD. Omit if no PRDs exist.]
+
+### PRD-NNNN: [Feature Title] ([Status])
+- **Must Have:** [bullet list from PRD]
+- **Success Criteria:** [from PRD]
+- **Open Questions:** [from PRD, if any remain — omit if none]
+
+[Full PRDs available in product/prds/]
+
 ## Success Metrics
 
 [How engineering will know the system is working correctly.]
@@ -90,7 +101,7 @@ Use these architecture plugin commands to proceed:
 | `/diagrams-as-code:c4-diagram [system]` | Individual C4 diagram as a `.puml` file in `docs/diagrams/` |
 | `/architecture-docs:adr [title]` | Architecture Decision Record in `docs/adr/` |
 
-Start with `/architecture-design:design-system` to establish system boundaries, then `/tech-spec` for implementation details.
+Start with `/architecture-design:design-system` to establish system boundaries, then `/architecture-docs:tech-spec` for implementation details.
 ```
 
 ---
@@ -106,4 +117,5 @@ Before finalizing the handoff, verify:
 - [ ] Non-goals are explicit — nothing left to interpretation
 - [ ] Feature scope has a priority order
 - [ ] Open questions are questions, not vague concerns
+- [ ] Product Requirements section includes summaries of all Accepted/Proposed PRDs
 - [ ] Next Steps section lists the architecture plugin commands to use

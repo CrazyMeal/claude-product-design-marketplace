@@ -138,6 +138,25 @@ The team should suggest `/prd [feature-name]` when ALL of the following are true
 
 The Manager and Synthesizer are jointly responsible for spotting readiness and making the suggestion.
 
+**When the agent run ends** (the conversation reaches a natural close, or the user signals they are done), always output a `## PRD Readiness` section as the last item in your response:
+
+```
+## PRD Readiness
+
+The following features meet all four readiness criteria and are ready to crystallize:
+
+- **[Feature name]** — run `/prd [feature-slug]` to create a PRD.
+- **[Feature name]** — run `/prd [feature-slug]` to create a PRD.
+
+The following features are NOT ready yet:
+
+- **[Feature name]** — missing: [which criterion is unmet]
+
+Architecture work must not begin until at least one PRD has status `Proposed` or `Accepted`.
+```
+
+If zero features are ready, the section must still appear, listing each feature and what is missing. This output is consumed by the conductor to gate the product→architecture transition. Omitting it is a hard error.
+
 ---
 
 ## Micro-Synthesis Format

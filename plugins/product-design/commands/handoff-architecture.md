@@ -34,11 +34,16 @@ Before generating the handoff, verify these conditions:
 | Solution is defined | `solutions.md` has a Selected Direction | Hard — block |
 | Features are scoped | `features.md` has a Feature List and Non-Goals | Hard — block |
 | Constraints are identified | Any file references constraints, limitations, or hard requirements | Hard — block |
-| Features have PRDs | At least one PRD in `product/prds/` has status Accepted or Proposed | Soft — warn |
+| Features have PRDs | At least one PRD in `product/prds/` has status Accepted or Proposed | Hard — block |
 
 If any hard condition is not met, list the gaps and ask: "The following are incomplete before handoff: [list]. Do you want to address them now, or proceed with what's available?"
 
-If the PRD condition is not met, warn but allow proceeding: "No Accepted or Proposed PRDs found. Architecture agents will work from raw feature scope. Consider running `/prd [feature-name]` to crystallize requirements first."
+If the PRD condition is not met, block with:
+"No Accepted or Proposed PRDs found. Architecture agents receiving a handoff without crystallized requirements risk misaligned design. Run `/prd [feature-name]` for at least one feature before generating the handoff.
+
+If you want to proceed without PRDs (for example: the product phase was done outside this plugin), type `proceed without prds` to override."
+
+Only proceed without PRDs if the user explicitly sends that override string.
 
 ## Step 3 — Load Handoff Template
 
